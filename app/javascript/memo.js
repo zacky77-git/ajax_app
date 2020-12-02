@@ -1,3 +1,4 @@
+// memoという関数を定義
 function memo() {
   // 「投稿する」ボタンの情報を取得
   const submit = document.getElementById("submit");
@@ -46,4 +47,5 @@ function memo() {
   });
 
 }
+// window（ページ）をload（読み込み）した時に実行する
 window.addEventListener("load", memo);

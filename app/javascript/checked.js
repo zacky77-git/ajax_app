@@ -1,10 +1,15 @@
+// checkという名前で関数を定義
 function check() {
-  // 表示されているすべてのメモを取得している
+  // 表示されているすべてのメモ(postをクラス名にもつ要素)を取得している
   const posts = document.querySelectorAll(".post");
+  // 要素1つずつに対して処理を設定
   posts.forEach(function (post) {
+    // addEventListenerが重複して追加されることを回避
      if (post.getAttribute("data-load") != null) {
+      // return null;を返して、処理を止める
       return null;
     }
+    // 要素にdata-load = "true"と属性を追加
     post.setAttribute("data-load", "true");
     // メモをクリックした場合に実行する処理を定義している
     post.addEventListener("click", () => {
@@ -39,4 +44,5 @@ function check() {
     });
   });
 }
+// setIntervalを使用し、check関数が1秒に1度実行されるように記述
 setInterval(check, 1000);

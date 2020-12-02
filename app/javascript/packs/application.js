@@ -7,7 +7,9 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+// checkd.jsを読み込む
 require("../checked")
+// memo.jsを読み込む
 require("../memo")
 
 

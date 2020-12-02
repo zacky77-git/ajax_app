@@ -1,18 +1,26 @@
+<%# このファイルは自力作成 %>
+
+<%# 本文 %>
 <h1>AjaxApp</h1>
 <%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
+  <%# 入力フォームの実装 %>
   <%= form.text_field :content  , id: "content"%>
+ <%# 送信ボタンの実装 %>
   <%= form.submit '投稿する' , id: "submit" %>
 <% end %>
 
 <div id="list">
 </div>
-
+<%# eachメソッドでレコードを1つずつ扱う %>
 <% @posts.each do |post| %>
+<%# メモ部分のブロック ・data-idとdata-checkのカスタムデータ属性を追加%>
 <div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>
     <div class="post-date">
+      <%# 日時データの表示 %>
       投稿日時：<%= post.created_at %>
     </div>
     <div class="post-content">
+    <%# contentカラムを表示 %>
       <%= post.content %>
     </div>
   </div>
